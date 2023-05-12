@@ -6,17 +6,14 @@ contenidoMenu.innerHTML += `
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestionar</a>
     <div class="dropdown-menu">
-        <a class="dropdown-item" href="#tab2Id">Estudiante</a>
+        <a class="dropdown-item" href="listarEstudiante.html">Estudiante</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#tab3Id">Profesor</a>
-        
+        <a class="dropdown-item" href="listarProfesor.html">Profesor</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="listarGrupo.html">Grupo</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="listarCurso.html">Curso</a>
     </div>
-</li>
-<li class="nav-item" role="presentation">
-    <a href="#tab5Id" class="nav-link" data-bs-toggle="tab">Grupo</a>
-</li>
-<li class="nav-item" role="presentation">
-    <a href="#" class="nav-link" data-bs-toggle="tab">Curso</a>
 </li>
 </ul>
 <div class="tab-content" id="myTabContent">
