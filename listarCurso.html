@@ -209,35 +209,51 @@ var datosenviar = {
 
     cargarDatos();
   </script>
-  <script>
-    var formulario = document.getElementById('formulario');
+  <!-- ... tu código HTML ... -->
 
-    formulario.addEventListener('submit', function(e) {
-        e.preventDefault();
+<script>
+  formulario.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        var datosenviar = {
-            nombre:  document.getElementById('nombre').value,
-            descripcion:document.getElementById('descripcion').value,
-            tiempo:document.getElementById('tiempo').value,
-            usuario:'Suarez' 
-        }
-        console.log(datosenviar);
-        fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
-        {
-            method:"POST",
-            body:JSON.stringify(datosenviar)
-        })//url de peticion de datos
-        .then(respuesta => respuesta.json())//recibe los datos en formato json
-        .then((datosrepuesta) => {
-          window.location = 'listarCurso.html'//Muestra el resultado de la peticion
+    var id = document.getElementById('id').value;
+    var nombre = document.getElementById('nombre').value;
+    var descripcion = document.getElementById('descripcion').value;
+    var tiempo = document.getElementById('tiempo').value;
+    var usuario = 'profesor Mario';
 
-             console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
-        })
-        .catch(console.log)//muestra errores
-    });
+    var datosenviar = {
+        id: id,
+        nombre: nombre,
+        descripcion: descripcion,
+        tiempo: tiempo,
+        usuario: usuario 
+    }
 
+    console.log(datosenviar);
+
+    var url = "https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php";
+    if (id) {
+        url = "https://paginas-web-cr.com/ApiPHP/apis/ActualizarCursos.php";
+    }
+
+    fetch(url, {
+        method: "POST",
+        body: JSON.stringify(datosenviar)
+    })
+    .then(respuesta => respuesta.json())
+    .then((datosrepuesta) => {            
+        console.log('Datos', datosrepuesta);
+        // Realizar las acciones necesarias después de guardar o editar los datos
+        // Por ejemplo, recargar la página o mostrar un mensaje de éxito
+        window.location.reload(); // Recargar la página después de guardar o editar
+    })
+    .catch(console.log);
+});
 
 </script>
+
+<!-- ... resto de tu código HTML ... -->
+
 </body>
 
 
