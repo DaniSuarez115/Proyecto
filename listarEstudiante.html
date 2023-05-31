@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Listar Estudiante</title>
+  <title>Title</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,36 +10,356 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
  <div class="container-fluid">
-    <div>
-      <header>
-        <div id="contenidoMenu"></div>  
-      </header>
-    </div>
-     <div>
-        <main>
-          
-        </main>
-     </div>
-      <div>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-      </div>
-      <!-- Bootstrap JavaScript Libraries -->
+    <header>
+      <div  id="contenidoMenu"></div>
       <script src="menu.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-      </script>
+      </header>
+      <main>
+        
+        <div cla ss="table-responsive">
+            <table class="table table-striped
+            table-hover	
+            table-borderless
+            table-primary
+            align-middle">
+                <thead class="table-light">
+                    <caption>Listar Curso</caption>
+                    <tr>
+                  
+                        <th>Cedula</th>
+                        <th>Correo electronico</th>
+                        <th>telefono</th>
+                        <th>telefonocelular</th>
+                        <th>fechanacimiento</th>
+                        <th>sexo</th>
+                        <th>direccion</th>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Nacionalidad</th>
+                        <th>Id de Carreras</th>
+                        <th>Usuario</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="resultados">
+                        
+                      
+                    </tbody>
+                    <tfoot>
+                        
+                    </tfoot>
+            </table>
+        </div>
+         <!-- Modal trigger button -->
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modal">
+    Launch
+    </button>
+        <div class="modal fade" id="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">Modulo Estudiantes</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formulario">
+                <div class="mb-3">
+                  <input type="hidden" id="id" name="id">
+                  <label for="" class="form-label">Cedula</label>
+                  <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId"
+                    placeholder="Ingresa tu  cedula" />
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Correo Electronico</label>
+                  <input type="text" class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId"
+                    placeholder="Ingresa tu correo aqui" />
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Telefono</label>
+                  <input type="text" class="form-control" name="telefono" id="telefono" aria-describedby="helpId"
+                    placeholder="Ingresa tu telefono aqui" />
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Telefono Celular</label>
+                  <input type="text" class="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId"
+                    placeholder="Ingresa tu numero de celular aqui" />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Fecha nacimiento</label>
+                  <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId"
+                    placeholder="Ingresa tu fecha de nacimiento aqui" />
+                </div>
+            
+              <div class="mb-3">
+                <label for="" class="form-label">Sexo</label>
+                <input type="text" class="form-control" name="sexo" id="sexo" aria-describedby="helpId"
+                  placeholder="Ingresa tu sexo aqui" />
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Direccion</label>
+                <input type="text" class="form-control" name="direccion" id="direccion" aria-describedby="helpId"
+                  placeholder="Ingresa tu direccion aqui" />
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Nombre</label>
+              <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                placeholder="Ingresa el nombre aqui" />
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Apellido paterno</label>
+            <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId"
+              placeholder="Ingresa el apellido paterno aqui" />
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Apellido Materno</label>
+          <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId"
+            placeholder="Ingresa el apellido materno aqui" />
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Nacionalidad</label>
+        <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId"
+          placeholder="Ingresa la nacionalidad aqui" />
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Id Carreras</label>
+      <input type="text" class="form-control" name="idCarreras" id="idCarreras" aria-describedby="helpId"
+        placeholder="Ingresa el id de las carreras aqui" />
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Usuario</label>
+    <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId"
+      placeholder="Ingresa el id deL usuario aqui" />
+</div>
+            <div class="mb-3">
+              <button type="reset" class="btn btn-danger">Limpiar</button>
+              <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+      </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal de confirmación de eliminación -->
+  <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminarModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmarEliminarModalLabel">Confirmar Eliminación</h5>
+        </div>
+        <div class="modal-body">
+          <form id="formulario2">
+          <p id="p"></p>
+          <button type="submit" id="eliminar" class="btn btn-danger" onclick="confirmacion()">Eliminar</button>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+      </main>
+      <footer>
+        <!-- place footer here -->
+      </footer>
+  </div>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <script>
+
+    var contenidoTablaResultado = document.querySelector("#resultados");
+
+    function cargarDatos(){
+
+        fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")//la url de peticion 
+        .then(respuesta => respuesta.json())//recibe los datos en json
+        .then((datosrespuesta) => {
+            settable(datosrespuesta.data)
+        } )
+        .catch(console.log)
+    }
+
+    function settable(data){
+        console.log('data',data);
+       
+        for (const valor of data) {
+            console.log('valor: ',valor);
+            contenidoTablaResultado.innerHTML += 
+                    `<tr class="table-primary" >
+                            <td>${valor.cedula}</td>
+                            <td>${valor.correoelectronico}</td>
+                            <td>${valor.telefono}</td>
+                            <td>${valor.telefonocelular}</td>
+                            <td>${valor.fechanacimiento}</td>
+                            <td>${valor.sexo}</td>
+                            <td>${valor.direccion}</td>
+                            <td>${valor.nombre}</td>
+                            <td>${valor.apellidopaterno}</td>
+                            <td>${valor.apellidomaterno}</td>
+                            <td>${valor.nacionalidad}</td>
+                            <td>${valor.idCarreras}</td>
+                            <td>${valor.usuario}</td>
+                            <td>
+                              <button id="boton1" onclick="borrar('${valor.id}')"class="btn btn-danger">Borrar</button>
+                              <button id ="boton2" type="button" onclick="editar('${valor.id}','${valor.cedula}','${valor.correoelectronico}','${valor.telefono}','${valor.telefonocelular}',' ${valor.fechanacimiento}',' ${valor.sexo} ',' ${valor.direccion} ','${valor.nombre} ','${valor.apellidopaterno}','${valor.apellidomaterno}','${valor.nacionalidad}','${valor.idCarreras}','${valor.usuario}')" class="btn btn-primary" role="button">Editar</button>
+                            </td>
+                        </tr>`;
+        }
+    }
+    var Modal = new bootstrap.Modal(document.getElementById('modal'));
+    var formulario = document.getElementById('formulario');
+
+    function editar(id, cedula, correoelectronico, telefono, telefonocelular,fechanacimiento,sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario){
+      Modal.show();
+      document.getElementById('id').value = id;
+      document.getElementById('cedula').value = cedula;
+      document.getElementById('correoelectronico').value = correoelectronico;
+      document.getElementById('telefono').value = telefono;
+      document.getElementById('telefonocelular').value = telefonocelular;
+      document.getElementById('fechanacimiento').value = fechanacimiento;
+      document.getElementById('sexo').value = sexo;
+      document.getElementById('direccion').value = direccion;
+      document.getElementById('nombre').value = nombre;
+      document.getElementById('apellidopaterno').value = apellidopaterno;
+      document.getElementById('apellidomaterno').value = apellidomaterno;
+      document.getElementById('nacionalidad').value = nacionalidad;
+      document.getElementById('idCarreras').value = idCarreras;
+      document.getElementById('usuario').value = usuario;
+    }
+
+    formulario.addEventListener('submit', function(e) {
+        e.preventDefault();
+       var id=document.getElementById('id').value;
+       var cedula = document.getElementById('cedula').value;
+       var correoelectronico = document.getElementById('correoelectronico').value;
+       var telefono = document.getElementById('telefono').value;
+       var telefonocelular = document.getElementById('telefonocelular').value;
+       var fechanacimiento = document.getElementById('fechanacimiento').value;
+       var sexo = document.getElementById('sexo').value;
+       var direccion = document.getElementById('direccion').value;
+       var nombre = document.getElementById('nombre').value;
+       var apellidopaterno = document.getElementById('apellidopaterno').value;
+       var apellidomaterno = document.getElementById('apellidomaterno').value;
+       var nacionalidad = document.getElementById('nacionalidad').value;
+       var idCarreras = document.getElementById('idCarreras').value;
+       var usuario = document.getElementById('usuario').value;
+
+        var datosenviar = {
+            id:id,
+            cedula:cedula,
+            correoelectronico:correoelectronico,
+            telefono:telefono,
+            telefonocelular:telefonocelular,
+            fechanacimiento:fechanacimiento,
+            sexo:sexo,
+            direccion:direccion,
+            nombre:nombre,
+            apellidopaterno:apellidopaterno,
+            apellidomaterno:apellidomaterno,
+            nacionalidad:nacionalidad,
+            idCarreras:idCarreras,
+            usuario:usuario
+        }
+        console.log(datosenviar);
+        var url = "https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php";
+        if (id) {
+        url = "https://paginas-web-cr.com/ApiPHP/apis/ActualizarEstudiantes.php";
+        }
+
+        fetch(url, {
+        method: "POST",
+        body: JSON.stringify(datosenviar)
+        })
+        .then(respuesta => respuesta.json())
+        .then((datosrepuesta) => {            
+        console.log('Datos', datosrepuesta);
+        // Realizar las acciones necesarias después de guardar o editar los datos
+        // Por ejemplo, recargar la página o mostrar un mensaje de éxito
+        // window.location.reload(); // Recargar la página después de guardar o editar
+    })
+    .catch(console.log);
+        //  fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
+        //   {
+        //      method:"POST",
+        //     body:JSON.stringify(datosenviar)
+        //  })//url de peticion de datos
+        //  .then(respuesta => respuesta.json())//recibe los datos en formato json
+        //  .then((datosrepuesta) => {            
+        //       console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
+        //       window.location= 'listarEstudiante.html'
+        //     })
+        //  .catch(console.log)//muestra errores
+    });
+
+    var modal2 = new bootstrap.Modal(document.getElementById('modal2'));
+    var formulario2 = document.getElementById('formulario2');
+    var parrafo = document.querySelector("#p");
+    var boton = document.getElementById("eliminar")
+
+    function borrar(id){
+      boton.style.display = "block";
+      parrafo.innerHTML = "¿Estás seguro de que deseas eliminar este estudiante? " + id;
+      modal2.show();   
+      formulario2.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var datosenviar = {
+            id:id
+        }
+   fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarEstudiantes.php",
+        {
+            method:"POST",
+            body:JSON.stringify(datosenviar)
+        })//url de peticion de datos
+        .then(respuesta => respuesta.json())//recibe los datos en formato json
+        .then((datosrepuesta) => {    
+                  
+        
+        })
+        .catch(console.log)//muestra errores
+    })
+     
+  }
+
+  function confirmacion(){
+    boton.style.display = "none";
+    parrafo.innerHTML = "Eliminado con exito"
+    var cerrar = document.getElementById("cerrar")
+    modal2.show();  
+    cerrar.addEventListener("click", function()
+    {
+      window.location.href="listarEstudiante.html";
+    });
+  
+  }
+  
+    cargarDatos();
     
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-      </script>
- </div>
+  
+  </script>
 </body>
 
 </html>
