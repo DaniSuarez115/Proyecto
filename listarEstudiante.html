@@ -73,71 +73,71 @@
                 <div class="mb-3">
                   <input type="hidden" id="id" name="id">
                   <label for="" class="form-label">Cedula</label>
-                  <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId"
+                  <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId" required
                     placeholder="Ingresa tu  cedula" />
                 </div>
 
                 <div class="mb-3">
                   <label for="" class="form-label">Correo Electronico</label>
-                  <input type="text" class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId"
+                  <input type="text" class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId" required
                     placeholder="Ingresa tu correo aqui" />
                 </div>
 
                 <div class="mb-3">
                   <label for="" class="form-label">Telefono</label>
-                  <input type="text" class="form-control" name="telefono" id="telefono" aria-describedby="helpId"
+                  <input type="text" class="form-control" name="telefono" id="telefono" aria-describedby="helpId" required
                     placeholder="Ingresa tu telefono aqui" />
                 </div>
 
                 <div class="mb-3">
                   <label for="" class="form-label">Telefono Celular</label>
-                  <input type="text" class="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId"
+                  <input type="text" class="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId" required
                     placeholder="Ingresa tu numero de celular aqui" />
                 </div>
                 <div class="mb-3">
                   <label for="" class="form-label">Fecha nacimiento</label>
-                  <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId"
+                  <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" required
                     placeholder="Ingresa tu fecha de nacimiento aqui" />
                 </div>
             
               <div class="mb-3">
                 <label for="" class="form-label">Sexo</label>
-                <input type="text" class="form-control" name="sexo" id="sexo" aria-describedby="helpId"
+                <input type="text" class="form-control" name="sexo" id="sexo" aria-describedby="helpId" required
                   placeholder="Ingresa tu sexo aqui" />
               </div>
               <div class="mb-3">
                 <label for="" class="form-label">Direccion</label>
-                <input type="text" class="form-control" name="direccion" id="direccion" aria-describedby="helpId"
+                <input type="text" class="form-control" name="direccion" id="direccion" aria-describedby="helpId" required
                   placeholder="Ingresa tu direccion aqui" />
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Nombre</label>
-              <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+              <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" required
                 placeholder="Ingresa el nombre aqui" />
           </div>
           <div class="mb-3">
-            <label for="" class="form-label">Apellido paterno</label>
-            <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId"
+            <label for="" class="form-label">Apellido paterno</label> 
+            <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId" required
               placeholder="Ingresa el apellido paterno aqui" />
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Apellido Materno</label>
-          <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId"
+          <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId" required
             placeholder="Ingresa el apellido materno aqui" />
       </div>
       <div class="mb-3">
         <label for="" class="form-label">Nacionalidad</label>
-        <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId"
+        <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId" required
           placeholder="Ingresa la nacionalidad aqui" />
     </div>
     <div class="mb-3">
       <label for="" class="form-label">Id Carreras</label>
-      <input type="text" class="form-control" name="idCarreras" id="idCarreras" aria-describedby="helpId"
+      <input type="text" class="form-control" name="idCarreras" id="idCarreras" aria-describedby="helpId" required
         placeholder="Ingresa el id de las carreras aqui" />
   </div>
   <div class="mb-3">
     <label for="" class="form-label">Usuario</label>
-    <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId"
+    <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId" required
       placeholder="Ingresa el id deL usuario aqui" />
 </div>
             <div class="mb-3">
@@ -174,6 +174,25 @@
       </div>
     </div>
   </div>
+        <!-- Modal de confirmación  -->
+        <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminarModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="confirmarModalLabel">Genial Acción Realizada!</h5>
+              </div>
+              <div class="modal-body">
+                <form id="formulario2">
+                <p id="p"></p>
+              </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" onclick="recargar()" id="cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      
+      
+              </div>
+            </div>
+          </div>
+        </div>
 
       </main>
       <footer>
@@ -362,6 +381,7 @@
         console.log('Datos', datosrepuesta);
         // Realizar las acciones necesarias después de guardar o editar los datos
         // Por ejemplo, recargar la página o mostrar un mensaje de éxito
+        confirmar();
         // window.location.reload(); // Recargar la página después de guardar o editar
         })
     .catch(console.log);
@@ -406,7 +426,15 @@
     })
      
   }
-
+  function confirmar()
+  {
+    var modal3 = new bootstrap.Modal(document.getElementById('modal3'));
+    var formulario2 = document.getElementById('formulario2');
+    var parrafo = document.querySelector("#p");
+    boton.style.display = "block";
+    parrafo.innerHTML = "Se agregó con Exito ";
+    modal3.show();
+  }
   function confirmacion(){
     boton.style.display = "none";
     parrafo.innerHTML = "Eliminado con exito"
@@ -422,6 +450,12 @@
     cargarDatos();
     
   
+  </script>
+  <script>
+    function recargar()
+    {
+      window.location.href="listarEstudiante.html";   
+    }
   </script>
 </body>
 

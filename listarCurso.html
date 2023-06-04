@@ -124,7 +124,25 @@
   </div>
 </footer>
 
+ <!-- Modal de confirmación  -->
+ <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminarModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarModalLabel">Genial Acción Realizada!</h5>
+      </div>
+      <div class="modal-body">
+        <form id="formulario2">
+        <p id="p"></p>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="recargar()" id="cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      
 
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal Body -->
 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
@@ -138,21 +156,21 @@
       <div class="modal-body">
         <form id="formulario">
           <div class="mb-3">
-            <input type="hidden" id="id" name="id">
+            <input type="hidden" id="id" name="id" required>
             <label for="" class="form-label">Nombre</label>
-            <input type="text"
+            <input type="text" required
               class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del curso">
             <small id="helpId" class="form-text text-muted">Ingresa el nombre del curso</small>
           </div>
           <div class="mb-3">
               <label for="" class="form-label">Descripción</label>
-              <input type="text"
+              <input type="text" required
                 class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Descripcion del curso">
               <small id="helpId" class="form-text text-muted">Ingresa la Descripcion del curso</small>
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Tiempo</label>
-              <input type="text"
+              <input type="text" required
                 class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="Tiempo del curso">
               <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
             </div>         
@@ -281,7 +299,8 @@ var datosenviar = {
         .then(respuesta => respuesta.json())//recibe los datos en formato json
         .then((datosrepuesta) => {            
              
-            //  window.location = 'listarCurso.html'//Muestra el resultado de la peticion
+          this.recargar();
+          //  window.location = 'listarCurso.html'//Muestra el resultado de la peticion
         })
         .catch(console.log)//muestra errores
         swal("Poof! tu registro se borro!", {
@@ -330,14 +349,32 @@ var datosenviar = {
     .then((datosrepuesta) => {            
         console.log('Datos', datosrepuesta);
         // Realizar las acciones necesarias después de guardar o editar los datos
+        
         // Por ejemplo, recargar la página o mostrar un mensaje de éxito
+        recargar();
         // window.location.reload(); // Recargar la página después de guardar o editar
     })
     .catch(console.log);
 });
 
 </script>
-
+<script>
+  function recargar()
+  {
+    window.location.href="listarCurso.html";   
+  }
+</script>
+<script>
+  function confirmar()
+  {
+    var modal3 = new bootstrap.Modal(document.getElementById('modal3'));
+    var formulario2 = document.getElementById('formulario2');
+    var parrafo = document.querySelector("#p");
+    boton.style.display = "block";
+    parrafo.innerHTML = "Se agregó con Exito ";
+    modal3.show();
+  }
+</script>
 </body>
 
 
